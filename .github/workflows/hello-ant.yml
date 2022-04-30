@@ -1,0 +1,16 @@
+name: Hello from Antony
+
+# On se refuere a escuchar un evento, en este caso el evento de push en la rama main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello_antony:
+   runs-on: ubuntu-18.04
+   steps:
+     - name: Echo the message
+       run: |
+         echo "Hola mundo!"
+         echo "La barra | nos permite correr multiples comando en un solo RUN"
