@@ -18,7 +18,6 @@ jobs:
           cache: 'npm'
           node-version: '14'
       - name: Instalar dependencias
-        run: npm Install
+        run: npm install
       - name: Lint
         run: npm run eslint
-        
