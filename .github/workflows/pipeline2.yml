@@ -1,0 +1,24 @@
+name: Deployment Pipeline Antony
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # Es el nombre del job, no hay un comando llamado deploy
+  deploy:
+   runs-on: ubuntu-18.04
+   steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+          node-version: '14'
+      - name: Instalar dependencias
+        run: npm Install
+      - name: Lint
+        run: npm run eslint
+        
